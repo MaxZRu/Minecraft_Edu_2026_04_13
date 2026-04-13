@@ -31,7 +31,6 @@ agent.move(FORWARD, 1)
 Попробуй нажать Play ещё раз. Агент снова шагает.
 
 ```blocks
-// @highlight
 agent.move(FORWARD, 1)
 ```
 
