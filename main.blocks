@@ -1,0 +1,103 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="mineblock_on_chat_command" x="10" y="10">
+    <field name="MESSAGE">вперёд</field>
+    <statement name="HANDLER">
+      <block type="minecraftAgent_move">
+        <field name="DIRECTION">FORWARD</field>
+        <value name="STEPS">
+          <shadow type="math_number"><field name="NUM">5</field></shadow>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="mineblock_on_chat_command" x="10" y="120">
+    <field name="MESSAGE">стена</field>
+    <statement name="HANDLER">
+      <block type="minecraftAgent_setItem">
+        <value name="ITEM">
+          <shadow type="minecraftBlock"><field name="item">stone</field></shadow>
+        </value>
+        <value name="COUNT">
+          <shadow type="math_number"><field name="NUM">64</field></shadow>
+        </value>
+        <value name="SLOT">
+          <shadow type="math_number"><field name="NUM">1</field></shadow>
+        </value>
+        <next>
+          <block type="pxt_controls_repeat">
+            <value name="TIMES">
+              <shadow type="math_whole_number"><field name="NUM">6</field></shadow>
+            </value>
+            <statement name="DO">
+              <block type="minecraftAgent_place">
+                <field name="DIRECTION">FORWARD</field>
+                <next>
+                  <block type="minecraftAgent_move">
+                    <field name="DIRECTION">RIGHT</field>
+                    <value name="STEPS">
+                      <shadow type="math_number"><field name="NUM">1</field></shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="mineblock_on_chat_command" x="10" y="340">
+    <field name="MESSAGE">домой</field>
+    <statement name="HANDLER">
+      <block type="minecraftAgent_teleportToPlayer"></block>
+    </statement>
+  </block>
+  <block type="mineblock_on_chat_command" x="10" y="450">
+    <field name="MESSAGE">квадрат</field>
+    <statement name="HANDLER">
+      <block type="minecraftAgent_setItem">
+        <value name="ITEM">
+          <shadow type="minecraftBlock"><field name="item">wool</field></shadow>
+        </value>
+        <value name="COUNT">
+          <shadow type="math_number"><field name="NUM">64</field></shadow>
+        </value>
+        <value name="SLOT">
+          <shadow type="math_number"><field name="NUM">1</field></shadow>
+        </value>
+        <next>
+          <block type="pxt_controls_repeat">
+            <value name="TIMES">
+              <shadow type="math_whole_number"><field name="NUM">4</field></shadow>
+            </value>
+            <statement name="DO">
+              <block type="pxt_controls_repeat">
+                <value name="TIMES">
+                  <shadow type="math_whole_number"><field name="NUM">5</field></shadow>
+                </value>
+                <statement name="DO">
+                  <block type="minecraftAgent_place">
+                    <field name="DIRECTION">DOWN</field>
+                    <next>
+                      <block type="minecraftAgent_move">
+                        <field name="DIRECTION">FORWARD</field>
+                        <value name="STEPS">
+                          <shadow type="math_number"><field name="NUM">1</field></shadow>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="minecraftAgent_turn">
+                    <field name="DIRECTION">TurnDirection.Right</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
