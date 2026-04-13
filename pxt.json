@@ -2,7 +2,8 @@
     "name": "minecraft-edu-tutorials",
     "description": "Серия уроков по программированию агента в Minecraft Education Edition",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "builder": "*"
     },
     "files": [
         "main.blocks",
@@ -12,9 +13,15 @@
         "tutorial-03-chat-commands.md",
         "tutorial-04-agent-square.md"
     ],
+    "testFiles": [
+        "test.ts"
+    ],
     "targetVersions": {
         "target": "2.1.27",
         "targetId": "minecraft"
     },
+    "supportedTargets": [
+        "minecraft"
+    ],
     "preferredEditor": "blocksprj"
 }

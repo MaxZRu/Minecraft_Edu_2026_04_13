@@ -5,5 +5,5 @@
         "outDir": "built",
         "rootDir": "."
     },
-    "exclude": ["built"]
+    "exclude": ["pxt_modules/**/*test.ts"]
 }
